@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {fetchProducts} from '../actions/productActions';
 import {addToCart} from '../actions/cartActions';
+import Notifications, {notify} from 'react-notify-toast';
 
 class Products extends Component {
   componentWillMount(){
@@ -15,7 +16,8 @@ class Products extends Component {
           <img src={`/images/${product.p_image}.jpg`} alt={product.p_name}/>
           <p className="pt-3" style={{'text-transform': 'uppercase'}}>{product.p_name}</p>
           <p className="font-weight-bold">Price: {product.c_currency}{product.p_price}</p>
-          <button className="btn btn-primary" onClick={() => this.props.addToCart(this.props.cartItems, product)}>Add to cart</button>
+          <Notifications />
+          <button className="btn btn-primary" onClick={() => {notify.show('Added item to Cart!', 'success', 1000);this.props.addToCart(this.props.cartItems, product)}}>Add to cart</button>
         </div>
       </div>
     ));

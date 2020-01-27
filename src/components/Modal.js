@@ -22,7 +22,7 @@ class Modal extends Component {
                     <hr className="editline"/>
                     <br/>
                     <h5 className="text-center text-muted" style={{'text-transform': 'uppercase'}}>{object.p_name}</h5>
-                    <h1 className="text-center">$57</h1>
+                    <h1 className="text-center">${object.p_price}</h1>
                     <br/>
                     <p className="text-center text-muted">{object.p_name}</p>
                     <form>
